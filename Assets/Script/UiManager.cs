@@ -12,7 +12,7 @@ public class UiManager : MonoBehaviour
     public AudioSource whistle;
     public Image healthbar;
     public float health = 50f;
-    private float TargetScore = 980f;
+    public float TargetScore = 100f;
     public static UiManager instance;
 
     // Start is called before the first frame update
@@ -20,6 +20,7 @@ public class UiManager : MonoBehaviour
     {
         whistle = gameObject.GetComponent<AudioSource>();
         target_txt.text = "*" + Convert.ToString(TargetScore);
+        instance = this;
     }
 
     // Update is called once per frame
@@ -29,13 +30,13 @@ public class UiManager : MonoBehaviour
         healthbar.fillAmount = (health / 100);
         timer -= Time.deltaTime;
         timer_txt.text = Convert.ToString(Mathf.Round(timer));
+        /*if (ScoreManager.instance.score >= TargetScore && Mathf.Round(timer) < 0)
+        {
+            SceneManager.LoadScene("CongratulationScreen");
+        }*/
         if (ScoreManager.instance.score >= TargetScore)
         {
             TargetScore += 250;
-        }
-        if (ScoreManager.instance.score >= TargetScore && Mathf.Round(timer) < 0)
-        {
-            SceneManager.LoadScene("CongratulationScreen");
         }
         if (Mathf.Round(timer) == 0)
         {

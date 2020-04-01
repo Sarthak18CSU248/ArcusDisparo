@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
@@ -18,5 +19,9 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreText.text = ":" + score.ToString();
+        if(UiManager.instance.TargetScore <= score)
+        {
+            SceneManager.LoadScene("CongratulationScreen");
+        }
     }
 }
