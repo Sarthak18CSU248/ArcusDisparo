@@ -8,11 +8,11 @@ public class UiManager : MonoBehaviour
 {
     public Text timer_txt;
     public Text target_txt;
-    private float timer = 60f;
+    public float timer = 60f;
     public AudioSource whistle;
     public Image healthbar;
     public float health = 50f;
-    public float TargetScore = 100f;
+    public float TargetScore = 980f;
     public static UiManager instance;
 
     // Start is called before the first frame update

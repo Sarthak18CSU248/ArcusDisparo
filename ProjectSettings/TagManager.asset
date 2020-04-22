@@ -14,6 +14,8 @@ TagManager:
   - Area5
   - Bomb
   - UI
+  - Fruit
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Fruit
+  - Bomb
   - 
   - 
   - 

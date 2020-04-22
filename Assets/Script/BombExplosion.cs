@@ -7,7 +7,7 @@ public class BombExplosion : MonoBehaviour
 {
     public GameObject Explosion;
     public GameObject Bomb;
-    private UiManager ui; 
+    private UiManager ui;
     private Animator Explosion_anim;
     public AudioSource explosion;
     // Start is called before the first frame update
@@ -33,8 +33,8 @@ public class BombExplosion : MonoBehaviour
             Explosion.SetActive(true);
             explosion.Play();
             Handheld.Vibrate();
-            Destroy(Explosion, 1f);
+            Destroy(this.Explosion,1f);
         }
     }
-   
+
 }
