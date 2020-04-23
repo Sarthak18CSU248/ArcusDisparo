@@ -37,17 +37,17 @@ public class EmbedArrow : MonoBehaviour {
             return;
 
         transform.GetComponent<ArrowForce>().enabled = false; //We'll disable the projectile force script
-        rb.isKinematic = true; //stop moving the object
+        rb.isKinematic = true; //stop object
 
-        //create an animation that shows the arrow has hit something
+        
        
-        sparks = Instantiate(sparksPrefab, transform) as GameObject; //instantiate a new sparks object
+        sparks = Instantiate(sparksPrefab, transform) as GameObject;
         sparksPrefab.transform.rotation = transform.rotation; //rotating the prefab will make it so the spark appears correctly
         sparkExists = true;
-        arrowClone = true;//note that the spark object now exists
+        arrowClone = true;
         Audio_Manager.Play("TargetHit");
         transform.localScale += new Vector3(1, 1, 1); //increase the scale of the arrow, since it's hard to see normally
-        transform.SetParent(col.transform,true); //compact the arrows into an arrow container once they've landed.
+        transform.SetParent(col.transform,true);
         //Invoke("DestroyObject", 2f);
     }
 }

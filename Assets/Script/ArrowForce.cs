@@ -8,8 +8,8 @@ public class ArrowForce : MonoBehaviour {
     //Whenever the script get's enabled
     private void OnEnable()
     {
-        rb = GetComponent<Rigidbody>(); //we'll get the rigidbody of the arrow
-        rb.velocity = Vector3.zero; //zero-out the velocity
+        rb = GetComponent<Rigidbody>(); // get the rigidbody of the arrow
+        rb.velocity = Vector3.zero; 
         ApplyForce(); //Apply force so the arrow flies
     }
 
